@@ -1,11 +1,11 @@
 """
-Module: case_project_setup
+Module: diamondhelm_project_setup
 
 Purpose: Provide functions to script project folders (and domonstrate basic Python coding skills).
 
 Description: This module provides functions for creating a series of project folders.
 
-Author: Denise Case
+Author: Diamond Helm
 
 TODO: Change the module name in this opening docstring
 TODO: Change the author in this opening docstring
@@ -18,11 +18,10 @@ TODO: Change the author in this opening docstring
 # Import moduldes from standand library
 # TODO: Import additional modules as needed
 import pathlib
-
+import utils_dhelm.py
+import time
 # Import local modules
 # TODO: Change this to import your module and uncomment
-# import case_utils 
-
 #####################################
 # Declare global variables
 #####################################
