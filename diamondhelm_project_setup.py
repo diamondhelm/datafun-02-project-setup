@@ -49,6 +49,10 @@ def create_folders_for_range(start_year: int, end_year: int) -> None:
     start_year -- The starting year of the range (inclusive).
     end_year -- The ending year of the range (inclusive).
     '''
+      for year in range(start_year, end_year + 1):
+        folder_name = data_path.joinpath(str(year))
+        folder_name.mkdir(exist_ok=True)
+        print(f"Folder {folder_name} created.")
     
     # Log the function call and its arguments using an f-string
     print(f"FUNCTION CALLED: create_folders_for_range with start_year={start_year} and end_year={end_year}")
@@ -68,6 +72,16 @@ def create_folders_from_list(folder_list: list) -> None:
     # TODO: Implement this function and remove the temporary pass
     pass
 
+       if to_lowercase:
+        folder_list = [name.lower() for name in folder_list]    
+
+    if remove_spaces:   
+        folder_list = [name.replace(" ", "") for name in folder_list]
+
+    for f_name in folder_list:
+        folder_name=data_path.joinpath(f_name)
+        folder_name.mkdir(exist_ok=True)
+        print(f"Folder {folder_name} created.")
 
   
 #####################################
@@ -80,6 +94,24 @@ def create_prefixed_folders(folder_list: list, prefix: str) -> None:
     # TODO: Implement this function professionally and remove the temporary pass
     pass
 
+    Create folders from a given list of names, with all folder names containing a common prefix.
+    
+    Arguments:
+    folder_list -- the list of folder names.
+    prefix -- the prefix to appear before each folder name.
+
+    """
+    # Log the function call and its arguments
+
+    print(f"FUNCTION CALLED: create_prefixed_folders with folder_list={folder_list} and prefix={prefix}")
+
+    # Implement this function
+    
+  for fold_name in folder_list:
+        prefix_name = f"{prefix} - {fold_name}"
+        folder_name=data_path.joinpath(prefix_name)
+        folder_name.mkdir(exist_ok=True)
+        print(f"Folder {folder_name} created.")
   
 
 #####################################
@@ -90,6 +122,30 @@ def create_prefixed_folders(folder_list: list, prefix: str) -> None:
 def create_folders_periodically(duration_seconds: int) -> None:
     # TODO: Implement this function professionally and remove the temporary pass
     pass
+
+ Create folders periodically.
+
+    Arguments:
+    folder_list -- the list of folder names.
+    duration_seconds -- the duration in seconds between folder creation.
+
+    """
+    # Log the function call and its arguments
+
+    print(f"FUNCTION CALLED: create_folders_periodically with duration_seconds={duration_seconds}")
+
+    # Implement this function
+
+    import os
+    import time
+
+    for f_name in folder_list:
+        folder_name=data_path.joinpath(f_name)
+        folder_name.mkdir(exist_ok=True)
+        print(f"Folder {folder_name} created.")
+
+        print(f"Now wait {duration_seconds} before creating the next folder")
+        time.sleep(duration_seconds)  
 
 
   
