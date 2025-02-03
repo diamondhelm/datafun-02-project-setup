@@ -18,9 +18,11 @@ TODO: Change the author in this opening docstring
 # Import moduldes from standand library
 # TODO: Import additional modules as needed
 import pathlib
-import utils_dhelm.py
 import time
+
 # Import local modules
+import utils_helm.py
+
 # TODO: Change this to import your module and uncomment
 #####################################
 # Declare global variables
@@ -49,13 +51,19 @@ def create_folders_for_range(start_year: int, end_year: int) -> None:
     start_year -- The starting year of the range (inclusive).
     end_year -- The ending year of the range (inclusive).
     '''
-      for year in range(start_year, end_year + 1):
-        folder_name = data_path.joinpath(str(year))
-        folder_name.mkdir(exist_ok=True)
-        print(f"Folder {folder_name} created.")
-    
-    # Log the function call and its arguments using an f-string
+
+      # Log the function call and its arguments using an f-string
     print(f"FUNCTION CALLED: create_folders_for_range with start_year={start_year} and end_year={end_year}")
+
+      for year in range(start_year, end_year + 1):
+        # Create a folder path for the year
+        year_path = data_path.joinpath(str(year))
+
+        # Create the year folder if it doesn't exist, otherwise do nothing
+        year_path.mkdir(exist_ok=True)
+        print(f"Folder created: {year_path}")
+    
+   
 
     # TODO: Implement the actual folder creation logic
     pass
@@ -66,7 +74,7 @@ def create_folders_for_range(start_year: int, end_year: int) -> None:
 # Pass in a list of folder names 
 #####################################
 
-def create_folders_from_list(folder_list: list) -> None:
+def create_folders_from_list(folder_list: list, to_lowercase: bool, remove_spaces:bool) -> None:
     # TODO: Add docstring
     # TODO: Log the function call and its arguments
     # TODO: Implement this function and remove the temporary pass
@@ -94,10 +102,10 @@ def create_prefixed_folders(folder_list: list, prefix: str) -> None:
     # TODO: Implement this function professionally and remove the temporary pass
     pass
 
-    Create folders from a given list of names, with all folder names containing a common prefix.
-    
+ Create prefixed folders by combining a prefix with a list of names.
+
     Arguments:
-    folder_list -- the list of folder names.
+    folder_list -- A list of folder names.
     prefix -- the prefix to appear before each folder name.
 
     """
@@ -109,9 +117,13 @@ def create_prefixed_folders(folder_list: list, prefix: str) -> None:
     
   for fold_name in folder_list:
         prefix_name = f"{prefix} - {fold_name}"
-        folder_name=data_path.joinpath(prefix_name)
-        folder_name.mkdir(exist_ok=True)
-        print(f"Folder {folder_name} created.")
+      
+      # Create a folder path for the name
+      name_path = data_path.joinpath (prefix + name) 
+
+      # Create the name folder if it doesn't exist, otherwise do nothing
+        name_path.mkdir(exist_ok=True)
+        print(f"Folder created: {name_path}.")
   
 
 #####################################
