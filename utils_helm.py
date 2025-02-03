@@ -25,7 +25,7 @@ import statistics  # provides mean(), stdev() and more....
 
 # declare a boolean variable (has a value True or False)
 # TODO: Add another or replace this with your own boolean variable
-has_childcare_for_ages_newborn_to_school_ age: bool = True
+has_childcare_for_ages_newborn_to_school_age: bool = True
 
 # declare an integer variable 
 # TODO: Add or replace this with your own integer variable
